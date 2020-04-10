@@ -1,0 +1,16 @@
+The sequence Class Using a Fixed-Sized Array
+Discussion of the Assignment
+Many of the features of this class are similar to the bag class from Section 3.1, so start by thoroughly reading Section 3.1 and pay attention to new features such as static constant members and the use of a typedef. The sequence class itself is discussed in Section 3.2 of the class text. Notice how the sequence differs from a bag (see page 119). The interactive test program sequence_exam.cxx  is discussed in Section 3.3 of the class text.
+Start by declaring the sequence's private member variables in sequence.h. Then write the invariant of your ADT at the top of sequence1.cxx. The invariant describes precisely how all of your private member variables are used. All of the member functions (except for the constructor) may count on the invariant being true when the member function is activated. And all of the member functions are responsible for ensuring that the invariant is true when the function returns.
+
+As always, do your work in small pieces. For example, my first version of the sequence had only a constructor, start, insert, advance, and current. My other member functions started out as stubs.
+
+Use the interactive test program and a debugger to track down errors in your implementation. If you have an error, do not start making changes until you have identified the cause of the error.
+
+The ability to initialize and use a static member constant within the class definition is a relatively new feature. If you have an older compiler that does not support static const members, then you may use
+
+enum {CAPACITY = 30};
+
+instead of
+
+static const size_type CAPACITY = 30;
