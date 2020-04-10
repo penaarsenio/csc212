@@ -1,0 +1,14 @@
+The Bag Class Using a Binary Search Tree
+Discussion of the Assignment
+Start by understanding the entire pseudocode for the binary search tree operations (from Section 10.5). Then read through the portions that I have already implemented for you. Implement the rest of your work in two parts: (1) The insert and count functions, and (2) The bst_remove_all and bst_remove_max functions. Don't move to step 2 until you have completely finished and tested step 1. Please only submit your work until everything is done...no need to submit the first part since I will not give bonus points for doing that this year.
+Since this is a template class, debugging can be more difficult (some debuggers don't permit breakpoints in a template function. To help in debugging, you can call b.debug() in a program to print the binary search tree for the bag b (using the format shown on page 484).
+
+If you use a makefile, you must also be careful in specifying what files are to be compiled. For example:
+
+bagexam: bagexam.o
+        g++ -Wall -gstabs bagexam.o -o bagexam
+
+bagexam.o: bagexam.cxx bag6.h bag6.template bintree.h bintree.template
+        g++ -c -Wall -gstabs bagexam.cxx
+The bag and bintree templates are never compiled on their own, but in order to create bagexam.o, all the template files must be present in the current directory.
+Most of your grade will be based on the correctness of your implementation. However, I will also look at your work and assign some points for clarity and programming style. Make sure that your name is on all your work.
