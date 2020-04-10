@@ -1,0 +1,25 @@
+Decimal 0 in binary is: 0
+Decimal 4 in binary is: 100
+Decimal 27 in binary is: 11011
+***
+****
+*****
+*****
+****
+***
+2 to the 0: 1
+2 to the -3: 0.125
+2 to the 1: 2
+2 to the 2: 4
+2 to the 3: 8
+
+This was written by calling number 1
+ This was written by calling number 2
+  This was written by calling number 3
+   This was written by calling number 4
+   This was ALSO written by calling number 4
+  This was ALSO written by calling number 3
+ This was ALSO written by calling number 2
+This was ALSO written by calling number 1
+
+
