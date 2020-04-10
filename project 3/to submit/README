@@ -1,0 +1,39 @@
+The sequence Class Using a Dynamic Array
+Discussion of the Assignment
+Your sequence class for this assignment will differ from the your previous sequence in the following ways:
+The number of items which may be stored in the sequence should only be limited by the amount of memory available on the heap. When new items are added to a sequence which is at capacity, the size of the data array in which items are stored should be automatically enlarged.
+Because you are dynamically allocation memory within your sequence class, you will need to define a copy constructor, an assignment operator, and a destructor.
+The constructor should have a default argument which allows the user to set the initial capacity of the sequence.
+There should be a resize function that allows the user to explicitly set the the capacity of the sequence.
+Start by declaring the new sequence's private member variables in sequence2.h. This should include the dynamic array (which is declared as a pointer to a value_type). You will also need two size_type variables to keep track of the number of items in the sequence and the total size of the dynamic array. After you've declared your member variables, write an invariant for the top of sequence2.cxx.
+Many of the features of this class are similar to the bag class from Section 4.3, so start by thoroughly reading Section 4.3 and pay attention to new features such as how the sequence differs from a bag (see page 119). Also the implementation of some of the functions are almost the same as in Part 1. Once again, do your work in small pieces. For example, my first version of the sequence had only a constructor, start, insert, advance, and current. My other member functions started out as stubs.
+
+Use the interactive test program and the debugger to track down errors in your implementation. If you have an error, do not start making changes until you have identified the cause of the error.
+
+The ability to initialize and use a static member constant within the class definition is a relatively new feature. If you have an older compiler (for example, Visual C++ 6.0) that does not support static const members, then you may use
+
+enum {DEFAULT_CAPACITY = 30};
+
+instead of
+
+static const size_type DEFAULT_CAPACITY = 30;
+
+After  this definition, the name bag::DEFAULT_CAPACITY is defined to have the integer value 30. Although this is not the intended use of an enum definition, the result is the same as using a static member constant (see more discussions at page 99 in the textbook).
+
+When a member functions needs to increase the size of the dynamic array, it is a good idea to increase that size by at least 10% (rather than by just one item).
+ 
+
+The sequence Class Using a Dynamic Array
+*Optional Part of the Assignment (for extra 10% points )
+You may wish to provide some additional useful member functions, such as
+(1) Operators + and +=.. For + operator, x+y contains all the items of x, followed by all the items in y. The statement x += y appends all the items in y to the end of what's already in x.
+(2) Operator []. For a sequence x, we would like to be able to refer to the individual items using the usual C++ notation for arrays. For example, if x has three items, then we want to be able to write x[0], x[1] and x[2] to access these three items. The use of the square brackets is called the subscript operator. The subscript operator may be overloaded as a member function, with the prototype shown here as part of the sequence class:
+class sequence
+{
+public:
+    ...
+    value_type operator[](size_type index) const;
+    ...
+};
+
+The only parameter is the index of the item we want to retrieve. The implementation of this member function should check that the index is valid, and then return the specified item.
